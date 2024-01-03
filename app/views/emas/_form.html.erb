@@ -1,0 +1,27 @@
+<%= form_with(model: ema) do |form| %>
+  <% if ema.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(ema.errors.count, "error") %> prohibited this ema from being saved:</h2>
+
+      <ul>
+        <% ema.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :body, style: "display: block" %>
+    <%= form.text_area :body %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

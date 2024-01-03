@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Emas</h1>
+
+<div id="emas">
+  <% @emas.each do |ema| %>
+    <%= render ema %>
+    <p>
+      <%= link_to "Show this ema", ema %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New ema", new_ema_path %>

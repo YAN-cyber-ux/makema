@@ -1,0 +1,2 @@
+class Ema < ApplicationRecord
+end

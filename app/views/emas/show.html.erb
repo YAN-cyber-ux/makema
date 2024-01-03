@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @ema %>
+
+<div>
+  <%= link_to "Edit this ema", edit_ema_path(@ema) %> |
+  <%= link_to "Back to emas", emas_path %>
+
+  <%= button_to "Destroy this ema", @ema, method: :delete %>
+</div>
