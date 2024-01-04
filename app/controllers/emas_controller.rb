@@ -25,7 +25,7 @@ class EmasController < ApplicationController
 
     respond_to do |format|
       if @ema.save
-        format.html { redirect_to ema_url(@ema), notice: "Ema was successfully created." }
+        format.html { redirect_to emas_path, notice: "良い一年のスタートです!! " }
         format.json { render :show, status: :created, location: @ema }
       else
         format.html { render :new, status: :unprocessable_entity }
