@@ -1,0 +1,22 @@
+databases:
+  - name: makema_DB
+    databaseName: makema_db
+    user: makema
+    region: singapore
+
+services:
+  - type: web
+    name: makema
+    env: ruby
+    region: singapore
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: makema
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
+
